@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBECD9B5314CC183960728F9 /* Pods_HelloWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */; };
 		F81BCDBB23EA9FC8009891E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */; };
-		F81BCDBD23EA9FC8009891E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDBC23EA9FC8009891E5 /* SceneDelegate.swift */; };
 		F81BCDBF23EA9FC8009891E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDBE23EA9FC8009891E5 /* ViewController.swift */; };
 		F81BCDC223EA9FC8009891E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81BCDC023EA9FC8009891E5 /* Main.storyboard */; };
 		F81BCDC523EA9FC8009891E5 /* HelloWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDC323EA9FC8009891E5 /* HelloWorld.xcdatamodeld */; };
@@ -17,15 +17,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640339695584878AF9E224E7 /* Pods-HelloWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWorld.release.xcconfig"; path = "Target Support Files/Pods-HelloWorld/Pods-HelloWorld.release.xcconfig"; sourceTree = "<group>"; };
+		663A52242378B4A7971533A2 /* Pods-HelloWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWorld.debug.xcconfig"; path = "Target Support Files/Pods-HelloWorld/Pods-HelloWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		F81BCDB723EA9FC8009891E5 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F81BCDBC23EA9FC8009891E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F81BCDBE23EA9FC8009891E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F81BCDC123EA9FC8009891E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F81BCDC423EA9FC8009891E5 /* HelloWorld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelloWorld.xcdatamodel; sourceTree = "<group>"; };
 		F81BCDC623EA9FC9009891E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F81BCDC923EA9FC9009891E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F81BCDCB23EA9FC9009891E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBECD9B5314CC183960728F9 /* Pods_HelloWorld.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E560753BBC351EBB294F087 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFC4A2F5D00A6D677D5902CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				663A52242378B4A7971533A2 /* Pods-HelloWorld.debug.xcconfig */,
+				640339695584878AF9E224E7 /* Pods-HelloWorld.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F81BCDAE23EA9FC8009891E5 = {
 			isa = PBXGroup;
 			children = (
 				F81BCDB923EA9FC8009891E5 /* HelloWorld */,
 				F81BCDB823EA9FC8009891E5 /* Products */,
+				EFC4A2F5D00A6D677D5902CD /* Pods */,
+				4E560753BBC351EBB294F087 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */,
-				F81BCDBC23EA9FC8009891E5 /* SceneDelegate.swift */,
 				F81BCDBE23EA9FC8009891E5 /* ViewController.swift */,
 				F81BCDC023EA9FC8009891E5 /* Main.storyboard */,
 				F81BCDC623EA9FC9009891E5 /* Assets.xcassets */,
@@ -77,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F81BCDCE23EA9FC9009891E5 /* Build configuration list for PBXNativeTarget "HelloWorld" */;
 			buildPhases = (
+				1AA42A6C70384422E6DDDE42 /* [CP] Check Pods Manifest.lock */,
 				F81BCDB323EA9FC8009891E5 /* Sources */,
 				F81BCDB423EA9FC8009891E5 /* Frameworks */,
 				F81BCDB523EA9FC8009891E5 /* Resources */,
+				83A3F9641A4FFB2CB30B62A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +160,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1AA42A6C70384422E6DDDE42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelloWorld-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83A3F9641A4FFB2CB30B62A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelloWorld/Pods-HelloWorld-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HelloWorld/Pods-HelloWorld-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HelloWorld/Pods-HelloWorld-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F81BCDB323EA9FC8009891E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,7 +209,6 @@
 			files = (
 				F81BCDBF23EA9FC8009891E5 /* ViewController.swift in Sources */,
 				F81BCDBB23EA9FC8009891E5 /* AppDelegate.swift in Sources */,
-				F81BCDBD23EA9FC8009891E5 /* SceneDelegate.swift in Sources */,
 				F81BCDC523EA9FC8009891E5 /* HelloWorld.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,11 +351,13 @@
 		};
 		F81BCDCF23EA9FC9009891E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 663A52242378B4A7971533A2 /* Pods-HelloWorld.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87V4LPCVW4;
 				INFOPLIST_FILE = HelloWorld/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +371,13 @@
 		};
 		F81BCDD023EA9FC9009891E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 640339695584878AF9E224E7 /* Pods-HelloWorld.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87V4LPCVW4;
 				INFOPLIST_FILE = HelloWorld/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
