@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,7 +56,6 @@
 				663A52242378B4A7971533A2 /* Pods-HelloWorld.debug.xcconfig */,
 				640339695584878AF9E224E7 /* Pods-HelloWorld.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +80,39 @@
 		F81BCDB923EA9FC8009891E5 /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
-				F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */,
+				F8962DD723EC922C00842C30 /* Scenes */,
+				F8962DD923EC92C500842C30 /* Startup */,
 				F81BCDBE23EA9FC8009891E5 /* ViewController.swift */,
 				F81BCDC023EA9FC8009891E5 /* Main.storyboard */,
-				F81BCDC623EA9FC9009891E5 /* Assets.xcassets */,
-				F81BCDC823EA9FC9009891E5 /* LaunchScreen.storyboard */,
+				F8962DD823EC925B00842C30 /* Resources */,
 				F81BCDCB23EA9FC9009891E5 /* Info.plist */,
-				F81BCDC323EA9FC8009891E5 /* HelloWorld.xcdatamodeld */,
 			);
 			path = HelloWorld;
+			sourceTree = "<group>";
+		};
+		F8962DD723EC922C00842C30 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F8962DD823EC925B00842C30 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F81BCDC323EA9FC8009891E5 /* HelloWorld.xcdatamodeld */,
+				F81BCDC623EA9FC9009891E5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F8962DD923EC92C500842C30 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				F81BCDC823EA9FC9009891E5 /* LaunchScreen.storyboard */,
+				F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */,
+			);
+			path = Startup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
