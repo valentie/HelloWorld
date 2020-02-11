@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		DBECD9B5314CC183960728F9 /* Pods_HelloWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */; };
 		F81BCDBB23EA9FC8009891E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */; };
-		F81BCDBF23EA9FC8009891E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDBE23EA9FC8009891E5 /* ViewController.swift */; };
 		F81BCDC223EA9FC8009891E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81BCDC023EA9FC8009891E5 /* Main.storyboard */; };
 		F81BCDC523EA9FC8009891E5 /* HelloWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDC323EA9FC8009891E5 /* HelloWorld.xcdatamodeld */; };
 		F81BCDC723EA9FC9009891E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81BCDC623EA9FC9009891E5 /* Assets.xcassets */; };
 		F81BCDCA23EA9FC9009891E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81BCDC823EA9FC9009891E5 /* LaunchScreen.storyboard */; };
+		F8CCBFD423F324C0008C1D16 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCBFD323F324C0008C1D16 /* CountryListViewController.swift */; };
+		F8CCBFD623F324CA008C1D16 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCBFD523F324CA008C1D16 /* CountryDetailViewController.swift */; };
+		F8CCBFD823F3250C008C1D16 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCBFD723F3250C008C1D16 /* CountryListViewModel.swift */; };
+		F8CCBFDA23F32519008C1D16 /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCBFD923F32519008C1D16 /* CountryDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +24,15 @@
 		663A52242378B4A7971533A2 /* Pods-HelloWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWorld.debug.xcconfig"; path = "Target Support Files/Pods-HelloWorld/Pods-HelloWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		F81BCDB723EA9FC8009891E5 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F81BCDBE23EA9FC8009891E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F81BCDC123EA9FC8009891E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F81BCDC423EA9FC8009891E5 /* HelloWorld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelloWorld.xcdatamodel; sourceTree = "<group>"; };
 		F81BCDC623EA9FC9009891E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F81BCDC923EA9FC9009891E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F81BCDCB23EA9FC9009891E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8CCBFD323F324C0008C1D16 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
+		F8CCBFD523F324CA008C1D16 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
+		F8CCBFD723F3250C008C1D16 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
+		F8CCBFD923F32519008C1D16 /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 		F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,7 +88,6 @@
 			children = (
 				F8962DD723EC922C00842C30 /* Scenes */,
 				F8962DD923EC92C500842C30 /* Startup */,
-				F81BCDBE23EA9FC8009891E5 /* ViewController.swift */,
 				F81BCDC023EA9FC8009891E5 /* Main.storyboard */,
 				F8962DD823EC925B00842C30 /* Resources */,
 				F81BCDCB23EA9FC9009891E5 /* Info.plist */,
@@ -93,6 +98,8 @@
 		F8962DD723EC922C00842C30 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F8CCBFD223F32181008C1D16 /* CountryDetail */,
+				F8CCBFD123F32176008C1D16 /* CountryList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -113,6 +120,24 @@
 				F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */,
 			);
 			path = Startup;
+			sourceTree = "<group>";
+		};
+		F8CCBFD123F32176008C1D16 /* CountryList */ = {
+			isa = PBXGroup;
+			children = (
+				F8CCBFD323F324C0008C1D16 /* CountryListViewController.swift */,
+				F8CCBFD723F3250C008C1D16 /* CountryListViewModel.swift */,
+			);
+			path = CountryList;
+			sourceTree = "<group>";
+		};
+		F8CCBFD223F32181008C1D16 /* CountryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F8CCBFD523F324CA008C1D16 /* CountryDetailViewController.swift */,
+				F8CCBFD923F32519008C1D16 /* CountryDetailViewModel.swift */,
+			);
+			path = CountryDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F81BCDBF23EA9FC8009891E5 /* ViewController.swift in Sources */,
 				F81BCDBB23EA9FC8009891E5 /* AppDelegate.swift in Sources */,
+				F8CCBFD423F324C0008C1D16 /* CountryListViewController.swift in Sources */,
+				F8CCBFDA23F32519008C1D16 /* CountryDetailViewModel.swift in Sources */,
+				F8CCBFD623F324CA008C1D16 /* CountryDetailViewController.swift in Sources */,
+				F8CCBFD823F3250C008C1D16 /* CountryListViewModel.swift in Sources */,
 				F81BCDC523EA9FC8009891E5 /* HelloWorld.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
