@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import RxSwift
 
 class CountryListViewController: UIViewController {
 
+    private let disposeBag = DisposeBag()
+    let viewModel = CountryListViewModel()
+    
+    @IBOutlet weak var listView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bindUI()
+    }
+    
+    func bindUI() {
+        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+        .mapToVoid()
+        .asDriverOnErrorJustComplete()
+        .startWith(())
+        
+        let input = CountryListViewModel.Input(fetchAction: viewWillAppear)
+        let output = viewModel.transform(input: input)
     }
 }

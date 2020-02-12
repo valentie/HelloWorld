@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class CountryListViewModel {
     
     struct Input {
-        
+        let fetchAction: Driver<Void>
     }
     
     struct Output {
@@ -19,6 +21,6 @@ class CountryListViewModel {
     }
     
     func transform(input: Input) -> Output {
-        
+        return Output()
     }
 }

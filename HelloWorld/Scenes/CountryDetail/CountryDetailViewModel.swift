@@ -20,5 +20,6 @@ class CountryDetailViewModel {
     
     func transform(input: Input) -> Output {
         
+        return Output()
     }
 }
