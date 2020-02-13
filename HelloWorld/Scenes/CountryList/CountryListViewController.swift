@@ -12,7 +12,7 @@ import RxSwift
 class CountryListViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
-    let viewModel = CountryListViewModel()
+    var viewModel: CountryListViewModel!
     
     @IBOutlet weak var listView: UITableView!
     

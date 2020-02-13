@@ -10,17 +10,39 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+import Domain
+import NetworkPlatform
+
 class CountryListViewModel {
+    private let useCase: CountryUseCase
+    private let navigator: CountryListRouter
+    
+    init(countryUseCase: CountryUseCase, navigator: CountryListRouter) {
+        self.useCase = countryUseCase
+        self.navigator = navigator
+    }
     
     struct Input {
         let fetchAction: Driver<Void>
     }
     
     struct Output {
-        
+//        let objects: Country
+        let fetching: Driver<Bool>
+        let error: Driver<Error>
     }
     
     func transform(input: Input) -> Output {
-        return Output()
+        let fetch = ActivityIndicator()
+        let errorTracker = ErrorTracker()
+        
+        let servicesObservable = input.fetchAction.flatMap { [weak self] objects -> Observable<Country> in
+            guard let self = self else { return Observable.never() }
+            return useCase.getAll()
+            .trackActivity(fetch)
+            .trackError(errorTracker)
+        }
+        
+        return Output(fetching: fetch.asDriver(), error: errorTracker.asDriver())
     }
 }

@@ -25,7 +25,7 @@ PODS:
 DEPENDENCIES:
   - Kingfisher
   - MBProgressHUD
-  - Moya/RxSwift (~> 14.0.0-beta.5)
+  - Moya/RxSwift (~> 14.0.0-beta.6)
   - RxCocoa
   - RxDataSources
   - RxSwift
@@ -56,6 +56,6 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
 
-PODFILE CHECKSUM: 000a796a9b577520fefd90b037050a34a4720676
+PODFILE CHECKSUM: 9b3cb90c3c9520cd2158a89f656429daf5e46e9c
 
 COCOAPODS: 1.8.4
