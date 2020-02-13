@@ -27,7 +27,7 @@ class CountryListViewModel {
     }
     
     struct Output {
-//        let objects: Country
+        let objects: Driver<[CountryElement]>
         let fetching: Driver<Bool>
         let error: Driver<Error>
     }
@@ -36,13 +36,17 @@ class CountryListViewModel {
         let fetch = ActivityIndicator()
         let errorTracker = ErrorTracker()
         
-        let servicesObservable = input.fetchAction.flatMap { [weak self] objects -> Observable<Country> in
-            guard let self = self else { return Observable.never() }
-            return useCase.getAll()
+        let servicesObservable = input.fetchAction.flatMap { [weak self] objects -> Driver<[CountryElement]> in
+            guard let self = self else { return Driver.never() }
+            return self.useCase.getAll()
             .trackActivity(fetch)
             .trackError(errorTracker)
+            .asDriverOnErrorJustComplete()
         }
         
-        return Output(fetching: fetch.asDriver(), error: errorTracker.asDriver())
+        let fetching = fetch.asDriver()
+        let errors = errorTracker.asDriver()
+        
+        return Output(objects: servicesObservable, fetching: fetching, error: errors)
     }
 }

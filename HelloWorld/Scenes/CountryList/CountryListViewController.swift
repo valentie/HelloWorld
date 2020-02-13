@@ -29,5 +29,12 @@ class CountryListViewController: UIViewController {
         
         let input = CountryListViewModel.Input(fetchAction: viewWillAppear)
         let output = viewModel.transform(input: input)
+        
+        output.objects
+        .drive(onNext: { [weak self] objects in
+            guard let self = self else { return }
+            print(objects)
+        })
+        .disposed(by: disposeBag)
     }
 }
