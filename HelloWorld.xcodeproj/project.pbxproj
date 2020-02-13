@@ -37,6 +37,7 @@
 		F8CCC01523F4112F008C1D16 /* NetworkUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC01423F4112F008C1D16 /* NetworkUseCaseProvider.swift */; };
 		F8CCC01923F4DE66008C1D16 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC01823F4DE66008C1D16 /* CountryService.swift */; };
 		F8CCC02123F512D6008C1D16 /* CountryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC02023F512D6008C1D16 /* CountryListRouter.swift */; };
+		F8CCC02F23F53FC7008C1D16 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC02E23F53FC7008C1D16 /* Application.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		F8CCC01423F4112F008C1D16 /* NetworkUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCaseProvider.swift; sourceTree = "<group>"; };
 		F8CCC01823F4DE66008C1D16 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		F8CCC02023F512D6008C1D16 /* CountryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListRouter.swift; sourceTree = "<group>"; };
+		F8CCC02E23F53FC7008C1D16 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 		F81BCDB923EA9FC8009891E5 /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				F8CCC02D23F53FC7008C1D16 /* Application */,
 				F8CCBFDB23F38091008C1D16 /* Extension */,
 				F81BCDCB23EA9FC9009891E5 /* Info.plist */,
 				F81BCDC023EA9FC8009891E5 /* Main.storyboard */,
@@ -304,6 +307,14 @@
 				F8CCC01823F4DE66008C1D16 /* CountryService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F8CCC02D23F53FC7008C1D16 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F8CCC02E23F53FC7008C1D16 /* Application.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,6 +568,7 @@
 				F8CCBFE723F385B1008C1D16 /* ListTableViewCell.swift in Sources */,
 				F8CCBFE323F380AE008C1D16 /* Reusable.swift in Sources */,
 				F8CCBFE223F380AE008C1D16 /* ErrorTracker.swift in Sources */,
+				F8CCC02F23F53FC7008C1D16 /* Application.swift in Sources */,
 				F8CCC02123F512D6008C1D16 /* CountryListRouter.swift in Sources */,
 				F8CCBFE123F380AE008C1D16 /* ActivityIndicator.swift in Sources */,
 				F8CCBFD823F3250C008C1D16 /* CountryListViewModel.swift in Sources */,

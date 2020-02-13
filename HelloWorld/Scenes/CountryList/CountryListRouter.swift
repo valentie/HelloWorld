@@ -11,7 +11,6 @@ import UIKit
 import Domain
 
 protocol CountryListRouter {
-
     func toDetail()
 }
 

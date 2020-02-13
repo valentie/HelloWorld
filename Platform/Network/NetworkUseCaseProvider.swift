@@ -13,6 +13,9 @@ import RxSwift
 
 public final class NetworkUseCaseProvider: Domain.CountryUseCase {
     
+    public init() {
+    }
+    
     public func getAll() -> Observable<Country> {
         let service = CountryService.getAllCountry
         return provider.rx

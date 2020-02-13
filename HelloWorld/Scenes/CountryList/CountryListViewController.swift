@@ -12,7 +12,7 @@ import RxSwift
 class CountryListViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
-    private var viewModel: CountryListViewModel!
+    var viewModel: CountryListViewModel!
     
     @IBOutlet weak var listView: UITableView!
     
@@ -34,7 +34,6 @@ class CountryListViewController: UIViewController {
         .drive(onNext: { [weak self] objects in
             guard let self = self else { return }
             print(objects)
-        })
-        .disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 }
