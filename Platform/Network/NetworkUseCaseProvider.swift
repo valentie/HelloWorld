@@ -11,7 +11,7 @@ import Domain
 import Moya
 import RxSwift
 
-public class NetworkUseCase: CountryUseCase {
+public final class NetworkUseCaseProvider: Domain.CountryUseCase {
     
     public func getAll() -> Observable<Country> {
         let service = CountryService.getAllCountry

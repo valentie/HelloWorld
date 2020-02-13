@@ -34,9 +34,8 @@
 		F8CCC00C23F409AF008C1D16 /* Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8CCC00523F409AF008C1D16 /* Platform.framework */; };
 		F8CCC00D23F409AF008C1D16 /* Platform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8CCC00523F409AF008C1D16 /* Platform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8CCC01323F40F0C008C1D16 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC01223F40F0C008C1D16 /* Provider.swift */; };
-		F8CCC01523F4112F008C1D16 /* NetworkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC01423F4112F008C1D16 /* NetworkUseCase.swift */; };
+		F8CCC01523F4112F008C1D16 /* NetworkUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC01423F4112F008C1D16 /* NetworkUseCaseProvider.swift */; };
 		F8CCC01923F4DE66008C1D16 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC01823F4DE66008C1D16 /* CountryService.swift */; };
-		F8CCC01F23F51239008C1D16 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC01E23F51239008C1D16 /* UseCaseProvider.swift */; };
 		F8CCC02123F512D6008C1D16 /* CountryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC02023F512D6008C1D16 /* CountryListRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,9 +106,8 @@
 		F8CCC00723F409AF008C1D16 /* Platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
 		F8CCC00823F409AF008C1D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8CCC01223F40F0C008C1D16 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		F8CCC01423F4112F008C1D16 /* NetworkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCase.swift; sourceTree = "<group>"; };
+		F8CCC01423F4112F008C1D16 /* NetworkUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCaseProvider.swift; sourceTree = "<group>"; };
 		F8CCC01823F4DE66008C1D16 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
-		F8CCC01E23F51239008C1D16 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		F8CCC02023F512D6008C1D16 /* CountryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListRouter.swift; sourceTree = "<group>"; };
 		F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,11 +191,11 @@
 			isa = PBXGroup;
 			children = (
 				F8CCBFDB23F38091008C1D16 /* Extension */,
-				F8962DD723EC922C00842C30 /* Scenes */,
-				F8962DD923EC92C500842C30 /* Startup */,
+				F81BCDCB23EA9FC9009891E5 /* Info.plist */,
 				F81BCDC023EA9FC8009891E5 /* Main.storyboard */,
 				F8962DD823EC925B00842C30 /* Resources */,
-				F81BCDCB23EA9FC9009891E5 /* Info.plist */,
+				F8962DD723EC922C00842C30 /* Scenes */,
+				F8962DD923EC92C500842C30 /* Startup */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -276,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				F8CCBFFC23F3D7C0008C1D16 /* CountryUseCase.swift */,
-				F8CCC01E23F51239008C1D16 /* UseCaseProvider.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -303,7 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				F8CCC01223F40F0C008C1D16 /* Provider.swift */,
-				F8CCC01423F4112F008C1D16 /* NetworkUseCase.swift */,
+				F8CCC01423F4112F008C1D16 /* NetworkUseCaseProvider.swift */,
 				F8CCC01823F4DE66008C1D16 /* CountryService.swift */,
 			);
 			path = Network;
@@ -573,7 +570,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8CCBFFD23F3D7C0008C1D16 /* CountryUseCase.swift in Sources */,
-				F8CCC01F23F51239008C1D16 /* UseCaseProvider.swift in Sources */,
 				F8CCBFFB23F3D784008C1D16 /* CountryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,7 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8CCC01923F4DE66008C1D16 /* CountryService.swift in Sources */,
-				F8CCC01523F4112F008C1D16 /* NetworkUseCase.swift in Sources */,
+				F8CCC01523F4112F008C1D16 /* NetworkUseCaseProvider.swift in Sources */,
 				F8CCC01323F40F0C008C1D16 /* Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
