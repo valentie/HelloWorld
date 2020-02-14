@@ -10,12 +10,11 @@ end
 target 'HelloWorld' do
   # Comment the next line if you don't want to use dynamic frameworks
   # Pods for HelloWorld
-  pod 'Kingfisher'
+  pod 'SDWebImageSVGCoder'
   pod 'SkeletonView'
   
   # Rx
   rx_swift
-  pod 'RxDataSources'
   
   # Activity Indicator
   pod 'MBProgressHUD'

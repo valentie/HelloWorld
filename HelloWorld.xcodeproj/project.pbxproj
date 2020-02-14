@@ -12,7 +12,6 @@
 		DBECD9B5314CC183960728F9 /* Pods_HelloWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */; };
 		F81BCDBB23EA9FC8009891E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */; };
 		F81BCDC223EA9FC8009891E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81BCDC023EA9FC8009891E5 /* Main.storyboard */; };
-		F81BCDC523EA9FC8009891E5 /* HelloWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F81BCDC323EA9FC8009891E5 /* HelloWorld.xcdatamodeld */; };
 		F81BCDC723EA9FC9009891E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81BCDC623EA9FC9009891E5 /* Assets.xcassets */; };
 		F81BCDCA23EA9FC9009891E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81BCDC823EA9FC9009891E5 /* LaunchScreen.storyboard */; };
 		F8CCBFD423F324C0008C1D16 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCBFD323F324C0008C1D16 /* CountryListViewController.swift */; };
@@ -38,6 +37,13 @@
 		F8CCC01923F4DE66008C1D16 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC01823F4DE66008C1D16 /* CountryService.swift */; };
 		F8CCC02123F512D6008C1D16 /* CountryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC02023F512D6008C1D16 /* CountryListRouter.swift */; };
 		F8CCC02F23F53FC7008C1D16 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC02E23F53FC7008C1D16 /* Application.swift */; };
+		F8CCC03123F54EA0008C1D16 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC03023F54EA0008C1D16 /* UITableView.swift */; };
+		F8CCC03923F5A581008C1D16 /* FavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC03823F5A581008C1D16 /* FavoriteUseCase.swift */; };
+		F8CCC03C23F5A739008C1D16 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC03A23F5A739008C1D16 /* Model.xcdatamodeld */; };
+		F8CCC03F23F5A8E7008C1D16 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC03E23F5A8E7008C1D16 /* CoreDataStack.swift */; };
+		F8CCC05123F5AF33008C1D16 /* CoreDataUserCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC05023F5AF33008C1D16 /* CoreDataUserCaseProvider.swift */; };
+		F8CCC06023F5B71A008C1D16 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC05F23F5B71A008C1D16 /* FavoriteModel.swift */; };
+		F8CCC06F23F5F8F4008C1D16 /* CountryDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CCC06E23F5F8F4008C1D16 /* CountryDetailRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +90,6 @@
 		F81BCDB723EA9FC8009891E5 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81BCDBA23EA9FC8009891E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F81BCDC123EA9FC8009891E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F81BCDC423EA9FC8009891E5 /* HelloWorld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelloWorld.xcdatamodel; sourceTree = "<group>"; };
 		F81BCDC623EA9FC9009891E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F81BCDC923EA9FC9009891E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F81BCDCB23EA9FC9009891E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +116,13 @@
 		F8CCC01823F4DE66008C1D16 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		F8CCC02023F512D6008C1D16 /* CountryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListRouter.swift; sourceTree = "<group>"; };
 		F8CCC02E23F53FC7008C1D16 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		F8CCC03023F54EA0008C1D16 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		F8CCC03823F5A581008C1D16 /* FavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUseCase.swift; sourceTree = "<group>"; };
+		F8CCC03B23F5A739008C1D16 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		F8CCC03E23F5A8E7008C1D16 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		F8CCC05023F5AF33008C1D16 /* CoreDataUserCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUserCaseProvider.swift; sourceTree = "<group>"; };
+		F8CCC05F23F5B71A008C1D16 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		F8CCC06E23F5F8F4008C1D16 /* CountryDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailRouter.swift; sourceTree = "<group>"; };
 		F98E64108E66F859F6F80F0C /* Pods_HelloWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -215,7 +227,6 @@
 		F8962DD823EC925B00842C30 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F81BCDC323EA9FC8009891E5 /* HelloWorld.xcdatamodeld */,
 				F81BCDC623EA9FC9009891E5 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -245,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				F8CCBFD523F324CA008C1D16 /* CountryDetailViewController.swift */,
+				F8CCC06E23F5F8F4008C1D16 /* CountryDetailRouter.swift */,
 				F8CCBFD923F32519008C1D16 /* CountryDetailViewModel.swift */,
 			);
 			path = CountryDetail;
@@ -258,6 +270,7 @@
 				F8CCBFDC23F380AD008C1D16 /* Observable+Ext.swift */,
 				F8CCBFDF23F380AE008C1D16 /* Reusable.swift */,
 				F8CCBFE423F381B3008C1D16 /* UIView.swift */,
+				F8CCC03023F54EA0008C1D16 /* UITableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -277,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				F8CCBFFC23F3D7C0008C1D16 /* CountryUseCase.swift */,
+				F8CCC03823F5A581008C1D16 /* FavoriteUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -285,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				F8CCBFFA23F3D784008C1D16 /* CountryModel.swift */,
+				F8CCC05F23F5B71A008C1D16 /* FavoriteModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -292,9 +307,11 @@
 		F8CCC00623F409AF008C1D16 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				F8CCC03D23F5A77B008C1D16 /* CoreData */,
 				F8CCC01123F40A72008C1D16 /* Network */,
 				F8CCC00723F409AF008C1D16 /* Platform.h */,
 				F8CCC00823F409AF008C1D16 /* Info.plist */,
+				F8CCC03A23F5A739008C1D16 /* Model.xcdatamodeld */,
 			);
 			path = Platform;
 			sourceTree = "<group>";
@@ -315,6 +332,23 @@
 				F8CCC02E23F53FC7008C1D16 /* Application.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		F8CCC03D23F5A77B008C1D16 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F8CCC04123F5A8F8008C1D16 /* CoreDataStack */,
+				F8CCC05023F5AF33008C1D16 /* CoreDataUserCaseProvider.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F8CCC04123F5A8F8008C1D16 /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				F8CCC03E23F5A8E7008C1D16 /* CoreDataStack.swift */,
+			);
+			path = CoreDataStack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,18 +596,19 @@
 			files = (
 				F81BCDBB23EA9FC8009891E5 /* AppDelegate.swift in Sources */,
 				F8CCBFD423F324C0008C1D16 /* CountryListViewController.swift in Sources */,
+				F8CCC03123F54EA0008C1D16 /* UITableView.swift in Sources */,
 				F8CCBFE523F381B3008C1D16 /* UIView.swift in Sources */,
 				F8CCBFDA23F32519008C1D16 /* CountryDetailViewModel.swift in Sources */,
 				F8CCBFD623F324CA008C1D16 /* CountryDetailViewController.swift in Sources */,
 				F8CCBFE723F385B1008C1D16 /* ListTableViewCell.swift in Sources */,
 				F8CCBFE323F380AE008C1D16 /* Reusable.swift in Sources */,
+				F8CCC06F23F5F8F4008C1D16 /* CountryDetailRouter.swift in Sources */,
 				F8CCBFE223F380AE008C1D16 /* ErrorTracker.swift in Sources */,
 				F8CCC02F23F53FC7008C1D16 /* Application.swift in Sources */,
 				F8CCC02123F512D6008C1D16 /* CountryListRouter.swift in Sources */,
 				F8CCBFE123F380AE008C1D16 /* ActivityIndicator.swift in Sources */,
 				F8CCBFD823F3250C008C1D16 /* CountryListViewModel.swift in Sources */,
 				F8CCBFE023F380AE008C1D16 /* Observable+Ext.swift in Sources */,
-				F81BCDC523EA9FC8009891E5 /* HelloWorld.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +617,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8CCBFFD23F3D7C0008C1D16 /* CountryUseCase.swift in Sources */,
+				F8CCC03923F5A581008C1D16 /* FavoriteUseCase.swift in Sources */,
 				F8CCBFFB23F3D784008C1D16 /* CountryModel.swift in Sources */,
+				F8CCC06023F5B71A008C1D16 /* FavoriteModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,9 +627,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8CCC03F23F5A8E7008C1D16 /* CoreDataStack.swift in Sources */,
 				F8CCC01923F4DE66008C1D16 /* CountryService.swift in Sources */,
 				F8CCC01523F4112F008C1D16 /* NetworkUseCaseProvider.swift in Sources */,
 				F8CCC01323F40F0C008C1D16 /* Provider.swift in Sources */,
+				F8CCC05123F5AF33008C1D16 /* CoreDataUserCaseProvider.swift in Sources */,
+				F8CCC03C23F5A739008C1D16 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,13 +991,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F81BCDC323EA9FC8009891E5 /* HelloWorld.xcdatamodeld */ = {
+		F8CCC03A23F5A739008C1D16 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F81BCDC423EA9FC8009891E5 /* HelloWorld.xcdatamodel */,
+				F8CCC03B23F5A739008C1D16 /* Model.xcdatamodel */,
 			);
-			currentVersion = F81BCDC423EA9FC8009891E5 /* HelloWorld.xcdatamodel */;
-			path = HelloWorld.xcdatamodeld;
+			currentVersion = F8CCC03B23F5A739008C1D16 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

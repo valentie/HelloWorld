@@ -24,5 +24,5 @@ class DefaultAlamofireSession: Alamofire.Session {
 public let provider: MoyaProvider<MultiTarget> = {
   let networkLoggerPluggin = NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))
   
-  return MoyaProvider<MultiTarget>(session: DefaultAlamofireSession.shared, plugins: [networkLoggerPluggin])
+  return MoyaProvider<MultiTarget>(session: DefaultAlamofireSession.shared, plugins: [])
 }()

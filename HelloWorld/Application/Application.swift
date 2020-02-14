@@ -9,24 +9,31 @@
 import UIKit
 import Domain
 import Platform
+import SDWebImageSVGCoder
 
 final class Application {
     static let shared = Application()
-
+    
     private let useCaseProvider: Domain.CountryUseCase
-
+    private let favoriteProvider: Domain.FavoriteUseCase
+    
     private init() {
         self.useCaseProvider = NetworkUseCaseProvider()
+        self.favoriteProvider = CoreDataUserCaseProvider()
     }
-
+    
     func configureMainInterface(in window: UIWindow) {
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homePage = storyboard.instantiateViewController(ofType: CountryListViewController.self)
         let navigationController = UINavigationController(rootViewController: homePage)
         
         let navigator = DefaultCountryListNavigator(services: useCaseProvider,
-        navigationController: navigationController,
-        storyBoard: storyboard)
+                                                    database: favoriteProvider,
+                                                    navigationController: navigationController,
+                                                    storyBoard: storyboard)
         
         homePage.viewModel = CountryListViewModel(countryUseCase: useCaseProvider, navigator: navigator)
         window.rootViewController = navigationController
