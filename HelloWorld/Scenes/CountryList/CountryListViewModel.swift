@@ -53,12 +53,12 @@ class CountryListViewModel {
         
         let favorite = self.dataBaseUseCase.fetchFavorite().asDriver(onErrorJustReturn: [])
         
-        let tramform = Driver.combineLatest(objects, favorite).map { zip($0.0, $0.1).filter { $0.0.name == $0.1.code }.map { (data, _) -> CellDisplayModel in
+        let tranform = Driver.combineLatest(objects, favorite).map { zip($0.0, $0.1).filter { $0.0.name == $0.1 }.map { (data, _) -> CellDisplayModel in
             let newData = CellDisplayModel(flag: data.flag, name: data.name, isFavotite: true)
             return newData
         } }
         
-        let data = Driver.combineLatest(tramform, input.index) { (content, index) -> [CellDisplayModel] in
+        let data = Driver.combineLatest(tranform, input.index) { (content, index) -> [CellDisplayModel] in
             content.filter { object -> Bool in
                 let value = object.isFavotite ? 1 : 0
                 return value == index

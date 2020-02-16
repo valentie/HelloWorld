@@ -24,24 +24,25 @@ public final class CoreDataUserCaseProvider: Domain.FavoriteUseCase {
 //        <#code#>
 //    }
     
-    public func fetchFavorite() -> Observable<[Favorite]> {
-        let context = persistentContainer.viewContext
+    public func fetchFavorite() -> Observable<[String]> {
+        let context =  coreDataStack.context
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDFavorite")
+        
         do {
           let result = try context.fetch(request)
-          return Observable.just(result as? [Favorite] ?? [])
+          return Observable.just(result as? [String] ?? [])
         } catch {
           print("Failed")
             return Observable.just([])
         }
     }
     
-    public func addFavortie(object: Favorite) -> Observable<Void> {
-        let context = persistentContainer.viewContext
+    public func addFavortie(code: String) -> Observable<Void> {
+        let context = coreDataStack.context
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
         let newFavorite = CDFavorite(context: context)
-        newFavorite.code = object.code
+        newFavorite.code = code
         
         do {
           try context.save()
@@ -51,12 +52,12 @@ public final class CoreDataUserCaseProvider: Domain.FavoriteUseCase {
         return Observable.just(Void())
     }
     
-    public func deleteFavorite(object: Favorite) -> Observable<Void> {
-        let context = persistentContainer.viewContext
+    public func deleteFavorite(code: String) -> Observable<Void> {
+        let context = coreDataStack.context
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDFavorite")
-        request.predicate = NSPredicate(format: "code == \(object.code)")
+        request.predicate = NSPredicate(format: "code == \(code)")
         
         do {
           let result = try context.fetch(request)
@@ -70,28 +71,5 @@ public final class CoreDataUserCaseProvider: Domain.FavoriteUseCase {
         }
         
         return Observable.just(Void())
-    }
-    
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Model")
-        container.loadPersistentStores(completionHandler: { (_, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-    
-    // MARK: - Core Data Saving support
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
     }
 }
