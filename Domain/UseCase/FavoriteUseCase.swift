@@ -11,7 +11,7 @@ import RxSwift
 
 public protocol FavoriteUseCase {
 //    func checkFavorite(object: String) -> Observable<Bool>
-    func fetchFavorite() -> Observable<[String]>
-    func addFavortie(code: String) -> Observable<Void>
-    func deleteFavorite(code: String) -> Observable<Void>
+    func fetchFavorite() -> Observable<[Favorite]>
+    func addFavortie(object: Favorite) -> Observable<Void>
+    func deleteFavorite(object: Favorite) -> Observable<Void>
 }

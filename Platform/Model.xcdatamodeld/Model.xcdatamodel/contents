@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDFavorite" representedClassName="CDFavorite" syncable="YES" codeGenerationType="class">
         <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="flagPath" optional="YES" attributeType="String"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="code"/>
@@ -9,6 +10,6 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="CDFavorite" positionX="-54" positionY="-9" width="128" height="58"/>
+        <element name="CDFavorite" positionX="-54" positionY="-9" width="128" height="73"/>
     </elements>
 </model>

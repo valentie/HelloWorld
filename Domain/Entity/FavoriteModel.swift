@@ -10,4 +10,5 @@ import Foundation
 
 public struct Favorite: Codable {
     public let code: String
+    public let flagPath: String
 }

@@ -24,25 +24,26 @@ public final class CoreDataUserCaseProvider: Domain.FavoriteUseCase {
 //        <#code#>
 //    }
     
-    public func fetchFavorite() -> Observable<[String]> {
+    public func fetchFavorite() -> Observable<[Favorite]> {
         let context =  coreDataStack.context
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDFavorite")
         
         do {
           let result = try context.fetch(request)
-          return Observable.just(result as? [String] ?? [])
+          return Observable.just(result as? [Favorite] ?? [])
         } catch {
           print("Failed")
             return Observable.just([])
         }
     }
     
-    public func addFavortie(code: String) -> Observable<Void> {
+    public func addFavortie(object: Favorite) -> Observable<Void> {
         let context = coreDataStack.context
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
         let newFavorite = CDFavorite(context: context)
-        newFavorite.code = code
+        newFavorite.code = object.code
+        newFavorite.flagPath = object.flagPath
         
         do {
           try context.save()
@@ -52,12 +53,12 @@ public final class CoreDataUserCaseProvider: Domain.FavoriteUseCase {
         return Observable.just(Void())
     }
     
-    public func deleteFavorite(code: String) -> Observable<Void> {
+    public func deleteFavorite(object: Favorite) -> Observable<Void> {
         let context = coreDataStack.context
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CDFavorite")
-        request.predicate = NSPredicate(format: "code == \(code)")
+        request.predicate = NSPredicate(format: "code == \(object)")
         
         do {
           let result = try context.fetch(request)
