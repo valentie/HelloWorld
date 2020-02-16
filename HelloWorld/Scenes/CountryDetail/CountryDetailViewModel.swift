@@ -23,7 +23,7 @@ class CountryDetailViewModel {
     }
     
     struct Input {
-        
+        let action: Driver<Void>
     }
     
     struct Output {
@@ -37,6 +37,29 @@ class CountryDetailViewModel {
                                 name: object.name,
                                 languages: fullLanguage)
         }
+        
+        //fetch favorite display image
+//        useCase.fetchFavorite()
+        //action click favorite button
+        
+        let save = input.action.withLatestFrom(displayModel)
+            .map { content in
+                return content.name
+        }
+        
+//        let save = input.action.withLatestFrom(Driver.just(country))
+//            .map { content in
+//                return content.name
+//        }
+//        .map { (title, content) in
+//            return Post(body: content, title: title)
+//        }
+//        .flatMapLatest { [unowned self] in
+//            return self.createPostUseCase.save(post: $0)
+//                    .trackActivity(activityIndicator)
+//                    .asDriverOnErrorJustComplete()
+//        }
+        
         return Output(detail: displayModel)
     }
 }

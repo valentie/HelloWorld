@@ -19,7 +19,7 @@ final class Application {
     
     private init() {
         self.useCaseProvider = NetworkUseCaseProvider()
-        self.favoriteProvider = CoreDataUserCaseProvider()
+        self.favoriteProvider = CoreDataUserCaseProvider.instance
     }
     
     func configureMainInterface(in window: UIWindow) {
@@ -35,7 +35,7 @@ final class Application {
                                                     navigationController: navigationController,
                                                     storyBoard: storyboard)
         
-        homePage.viewModel = CountryListViewModel(countryUseCase: useCaseProvider, navigator: navigator)
+        homePage.viewModel = CountryListViewModel(countryUseCase: useCaseProvider, favariteUseCase: favoriteProvider, navigator: navigator)
         window.rootViewController = navigationController
         
     }

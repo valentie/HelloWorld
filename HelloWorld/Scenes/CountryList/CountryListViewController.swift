@@ -18,6 +18,7 @@ class CountryListViewController: UIViewController {
     private var country = [CellDisplayModel]()
     
     @IBOutlet weak var listView: UITableView!
+    @IBOutlet weak var switcher: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +30,18 @@ class CountryListViewController: UIViewController {
     }
     
     func bindUI() {
+        self.title = "List"
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .mapToVoid()
             .asDriverOnErrorJustComplete()
             .startWith(())
+        let index = switcher.rx.selectedSegmentIndex
+            .asDriver()
+            .startWith(0)
         
         let input = CountryListViewModel.Input(fetchAction: viewWillAppear,
-                                               selection: listView.rx.itemSelected.asDriver())
+                                               selection: listView.rx.itemSelected.asDriver(),
+                                               index: index)
         let output = viewModel.transform(input: input)
         
         output.fetching

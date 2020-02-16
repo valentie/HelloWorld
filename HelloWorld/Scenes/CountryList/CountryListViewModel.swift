@@ -14,17 +14,20 @@ import Domain
 import NetworkPlatform
 
 class CountryListViewModel {
-    private let useCase: CountryUseCase
+    private let serviceUseCase: CountryUseCase
+    private let dataBaseUseCase: FavoriteUseCase
     private let navigator: CountryListRouter
     
-    init(countryUseCase: CountryUseCase, navigator: CountryListRouter) {
-        self.useCase = countryUseCase
+    init(countryUseCase: CountryUseCase, favariteUseCase: FavoriteUseCase, navigator: CountryListRouter) {
+        self.serviceUseCase = countryUseCase
+        self.dataBaseUseCase = favariteUseCase
         self.navigator = navigator
     }
     
     struct Input {
         let fetchAction: Driver<Void>
         let selection: Driver<IndexPath>
+        let index: Driver<Int>
     }
     
     struct Output {
@@ -40,7 +43,7 @@ class CountryListViewModel {
         
         let servicesObservable = input.fetchAction.flatMap { [weak self] objects -> Driver<[CountryElement]> in
             guard let self = self else { return Driver.never() }
-            return self.useCase.getAll()
+            return self.serviceUseCase.getAll()
                 .trackActivity(fetch)
                 .trackError(errorTracker)
                 .asDriverOnErrorJustComplete()
@@ -48,9 +51,19 @@ class CountryListViewModel {
         
         let objects = servicesObservable.map{ $0.map { CellDisplayModel(flag: $0.flag, name: $0.name, isFavotite: false) } }
         
-        //fetch CoreData Favorite and change value
+        let favorite = self.dataBaseUseCase.fetchFavorite().asDriver(onErrorJustReturn: [])
         
-        //split 2 section
+        let tramform = Driver.combineLatest(objects, favorite).map { zip($0.0, $0.1).filter { $0.0.name == $0.1.code }.map { (data, _) -> CellDisplayModel in
+            let newData = CellDisplayModel(flag: data.flag, name: data.name, isFavotite: true)
+            return newData
+        } }
+        
+        let data = Driver.combineLatest(tramform, input.index) { (content, index) -> [CellDisplayModel] in
+            content.filter { object -> Bool in
+                let value = object.isFavotite ? 1 : 0
+                return value == index
+            }
+        }
         
         let fetching = fetch.asDriver()
         let errors = errorTracker.asDriver()
@@ -61,7 +74,7 @@ class CountryListViewModel {
         }
         .do(onNext: navigator.toDetail)
         
-        return Output(objects: objects, selectedCountry: selectedCountry, fetching: fetching, error: errors)
+        return Output(objects: data, selectedCountry: selectedCountry, fetching: fetching, error: errors)
     }
 }
 

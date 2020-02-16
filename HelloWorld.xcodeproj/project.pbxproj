@@ -256,8 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				F8CCBFD523F324CA008C1D16 /* CountryDetailViewController.swift */,
-				F8CCC06E23F5F8F4008C1D16 /* CountryDetailRouter.swift */,
 				F8CCBFD923F32519008C1D16 /* CountryDetailViewModel.swift */,
+				F8CCC06E23F5F8F4008C1D16 /* CountryDetailRouter.swift */,
 			);
 			path = CountryDetail;
 			sourceTree = "<group>";

@@ -9,6 +9,5 @@
 import Foundation
 
 public struct Favorite: Codable {
-    public let uid: String
     public let code: String
 }

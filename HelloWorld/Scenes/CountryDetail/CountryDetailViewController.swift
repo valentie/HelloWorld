@@ -26,7 +26,8 @@ class CountryDetailViewController: UIViewController {
     }
     
     func bindUI() {
-        let input = CountryDetailViewModel.Input()
+        let action = favoriteButton.rx.tap.asDriver()
+        let input = CountryDetailViewModel.Input(action: action)
         let output = viewModel.transform(input: input)
         
         output.detail.drive(onNext: { [weak self] object in
@@ -34,7 +35,7 @@ class CountryDetailViewController: UIViewController {
             guard let svgUrl = URL(string: object.flag) else { return }
             let bitmapSize = CGSize(width: 300, height: 200)
             self.flagImage.sd_setImage(with: svgUrl, placeholderImage: UIImage(named: "noImage"), options: [], context: [.imageThumbnailPixelSize : bitmapSize])
-            
+            self.title = object.name
             self.nameLabel.text = "Name : \(object.name)"
             self.languageLabel.text = "Language : \(object.languages)"
         }).disposed(by: disposeBag)
