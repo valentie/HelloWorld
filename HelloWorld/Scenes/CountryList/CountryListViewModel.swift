@@ -32,7 +32,7 @@ class CountryListViewModel {
     
     struct Output {
         let objects: Driver<[CellDisplayModel]>
-        let selectedCountry: Driver<CountryElement>
+        let selectedCountry: Driver<CellDisplayModel>
         let fetching: Driver<Bool>
         let error: Driver<Error>
     }
@@ -49,14 +49,17 @@ class CountryListViewModel {
                 .asDriverOnErrorJustComplete()
         }
         
-        let objects = servicesObservable.map{ $0.map { CellDisplayModel(flag: $0.flag, name: $0.name, isFavotite: false) } }
+        let objects = servicesObservable.map{ $0.map { CellDisplayModel(flag: $0.flag, name: $0.name, languages: $0.languages, isFavotite: false) } }
         
-        let favorite = self.dataBaseUseCase.fetchFavorite().asDriver(onErrorJustReturn: [])
+        let favoriteData = input.fetchAction.flatMap { [weak self] _ -> Driver<[Favorite]> in
+            guard let self = self else { return Driver.never() }
+            return self.dataBaseUseCase.fetchFavorite().asDriver(onErrorJustReturn: [])
+        }
         
-        let tranform = Driver.combineLatest(objects, favorite).map { (data, favorite) -> [CellDisplayModel] in
+        let tranform = Driver.combineLatest(objects, favoriteData).map { (data, favorite) -> [CellDisplayModel] in
             let abc = data.map { country -> CellDisplayModel in
                 let isFav = favorite.contains { $0.code == country.name }
-                return CellDisplayModel(flag: country.flag, name: country.name, isFavotite: isFav)
+                return CellDisplayModel(flag: country.flag, name: country.name, languages: country.languages, isFavotite: isFav)
             }
             return abc
         }
@@ -72,7 +75,7 @@ class CountryListViewModel {
         let errors = errorTracker.asDriver()
         
         let selectedCountry = input.selection
-        .withLatestFrom(servicesObservable) { (indexPath, countrys) -> CountryElement in
+        .withLatestFrom(data) { (indexPath, countrys) -> CellDisplayModel in
             return countrys[indexPath.row]
         }
         .do(onNext: navigator.toDetail)
@@ -87,6 +90,7 @@ extension CountryListViewController {
     struct CellDisplayModel: Codable {
         var flag: String
         var name: String
+        var languages: [Language]
         var isFavotite: Bool
     }
 }

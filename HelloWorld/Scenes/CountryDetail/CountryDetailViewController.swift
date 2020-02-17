@@ -26,8 +26,12 @@ class CountryDetailViewController: UIViewController {
     }
     
     func bindUI() {
+        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+        .mapToVoid()
+        .asDriverOnErrorJustComplete()
+        .startWith(())
         let action = favoriteButton.rx.tap.asDriver()
-        let input = CountryDetailViewModel.Input(action: action)
+        let input = CountryDetailViewModel.Input(checkStatus: viewWillAppear, action: action)
         let output = viewModel.transform(input: input)
         
         output.detail.drive(onNext: { [weak self] object in
@@ -38,6 +42,15 @@ class CountryDetailViewController: UIViewController {
             self.title = object.name
             self.nameLabel.text = "Name : \(object.name)"
             self.languageLabel.text = "Language : \(object.languages)"
+        }).disposed(by: disposeBag)
+        
+        output.isfavorite.drive(onNext: { [weak self] isFavorite in
+            guard let self = self else { return }
+            if isFavorite {
+                self.favoriteButton.setBackgroundImage(UIImage(named: "star"), for: .normal)
+            }else{
+                self.favoriteButton.setBackgroundImage(UIImage(named: "blackStar"), for: .normal)
+            }
         }).disposed(by: disposeBag)
     }
 }

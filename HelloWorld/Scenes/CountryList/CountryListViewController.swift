@@ -44,7 +44,7 @@ class CountryListViewController: UIViewController {
                                                index: index)
         let output = viewModel.transform(input: input)
         
-        output.fetching
+        output.fetching.debounce(.seconds(1))
         .drive(view.rx.showSkeletonLoading)
         .disposed(by: disposeBag)
         

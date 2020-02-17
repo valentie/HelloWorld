@@ -11,7 +11,7 @@ import UIKit
 import Domain
 
 protocol CountryListRouter {
-    func toDetail(_ country: CountryElement)
+    func toDetail(_ country: CellDisplayModel)
 }
 
 final class DefaultCountryListNavigator: CountryListRouter {
@@ -31,7 +31,7 @@ final class DefaultCountryListNavigator: CountryListRouter {
         self.storyBoard = storyBoard
     }
     
-    func toDetail(_ country: CountryElement) {
+    func toDetail(_ country: CellDisplayModel) {
         let navigator = DefaultCountryDetailNavigator(navigationController: navigationController)
         let viewModel = CountryDetailViewModel(country: country, countryUseCase: database, navigator: navigator)
         let vc = storyBoard.instantiateViewController(ofType: CountryDetailViewController.self)

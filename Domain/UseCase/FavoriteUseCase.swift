@@ -10,8 +10,7 @@ import Foundation
 import RxSwift
 
 public protocol FavoriteUseCase {
-//    func checkFavorite(object: String) -> Observable<Bool>
+    func checkFavorite(name: String) -> Observable<Bool>
     func fetchFavorite() -> Observable<[Favorite]>
-    func addFavortie(object: Favorite) -> Observable<Void>
-    func deleteFavorite(object: Favorite) -> Observable<Void>
+    func triggleFavorite(object: Favorite) -> Bool
 }

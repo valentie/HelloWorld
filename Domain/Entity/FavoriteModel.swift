@@ -11,4 +11,9 @@ import Foundation
 public struct Favorite: Codable {
     public let code: String
     public let flagPath: String
+    
+    public init(code: String, flagPath: String) {
+      self.code = code
+      self.flagPath = flagPath
+    }
 }
