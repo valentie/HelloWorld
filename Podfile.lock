@@ -1,40 +1,63 @@
 PODS:
-  - Alamofire (4.9.1)
-  - Kingfisher (5.13.0):
-    - Kingfisher/Core (= 5.13.0)
-  - Kingfisher/Core (5.13.0)
+  - Alamofire (5.0.0-rc.3)
+  - CocoaLumberjack (3.6.1):
+    - CocoaLumberjack/Core (= 3.6.1)
+  - CocoaLumberjack/Core (3.6.1)
   - MBProgressHUD (1.2.0)
+  - Moya/Core (14.0.0-beta.6):
+    - Alamofire (= 5.0.0-rc.3)
+  - Moya/RxSwift (14.0.0-beta.6):
+    - Moya/Core
+    - RxSwift (~> 5.0)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
+  - SDWebImage/Core (5.5.2)
+  - SDWebImageSVGCoder (0.3.0):
+    - SDWebImage/Core (~> 5.0)
+    - SVGKit (>= 2.1)
+  - SkeletonView (1.8.2)
+  - SVGKit (2.1.1):
+    - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - Kingfisher
   - MBProgressHUD
+  - Moya/RxSwift (~> 14.0.0-beta.6)
   - RxCocoa
   - RxSwift
+  - SDWebImageSVGCoder
+  - SkeletonView
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Kingfisher
+    - CocoaLumberjack
     - MBProgressHUD
+    - Moya
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SDWebImage
+    - SDWebImageSVGCoder
+    - SkeletonView
+    - SVGKit
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  Moya: d4821fbcb3e784f34d2f82869e6855057a0b85d1
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
+  SDWebImageSVGCoder: 4b354bcdc7d74ce14d9fdb3c9ed9ab2c667f3b57
+  SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
+  SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: 065cd4a49cde7b7c57d5021a632fda8850f41af8
+PODFILE CHECKSUM: a9b60e7eef47cfa0018d528040aae1d3f0978614
 
 COCOAPODS: 1.8.4
