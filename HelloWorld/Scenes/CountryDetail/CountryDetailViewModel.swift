@@ -29,7 +29,8 @@ class CountryDetailViewModel {
     
     struct Output {
         let detail: Driver<DisplayModel>
-        let isfavorite: Driver<Bool>
+        let isFavorite: Driver<Bool>
+        let triggle: Driver<Bool>
     }
     
     func transform(input: Input) -> Output {
@@ -41,28 +42,19 @@ class CountryDetailViewModel {
                                     languages: fullLanguage)
         }
         
-        let action = Driver.combineLatest(input.checkStatus, input.action)
+        let isFavorite = Driver.combineLatest(input.checkStatus, displayModel)
+            .flatMap { _, content in
+                return self.useCase.checkFavorite(name: content.name).asDriverOnErrorJustComplete()
+        }
+        
+        let action = input.action
             .withLatestFrom(displayModel)
             .map { content -> Bool in
                 let object = Favorite(code: content.name, flagPath: content.flag)
                 return self.useCase.triggleFavorite(object: object)
         }
-            
-//            Driver.combineLatest(input.checkStatus, input.action, displayModel) { _, _, content -> Bool in
-//            let object = Favorite(code: content.name, flagPath: content.flag)
-//            return self.useCase.triggleFavorite(object: object)
-//        }
-//        let resultAPI = Driver.zip(input.action, isSuccess)
-//          .withLatestFrom(Driver.combineLatest(citizen, phone, location))
-//          .flatMap { (id, number, locate) in
-//            return UserProvider.logIn(type: "ID_CARD", citizen: id, phone: number, token: nil, location: locate)
-//              .trackActivity(activityIndicator)
-//              .trackError(error)
-//              .asDriverOnErrorJustComplete()
-//        }
         
-        
-        return Output(detail: displayModel, isfavorite: action)
+        return Output(detail: displayModel,isFavorite: isFavorite, triggle: action)
     }
 }
 

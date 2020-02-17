@@ -44,13 +44,22 @@ class CountryDetailViewController: UIViewController {
             self.languageLabel.text = "Language : \(object.languages)"
         }).disposed(by: disposeBag)
         
-        output.isfavorite.drive(onNext: { [weak self] isFavorite in
+        output.isFavorite.drive(onNext: { [weak self] isShow in
             guard let self = self else { return }
-            if isFavorite {
-                self.favoriteButton.setBackgroundImage(UIImage(named: "star"), for: .normal)
-            }else{
-                self.favoriteButton.setBackgroundImage(UIImage(named: "blackStar"), for: .normal)
-            }
+            self.setStar(isShow)
         }).disposed(by: disposeBag)
+        
+        output.triggle.drive(onNext: { [weak self] isFavorite in
+            guard let self = self else { return }
+            self.setStar(isFavorite)
+        }).disposed(by: disposeBag)
+    }
+    
+    func setStar(_ setStar: Bool) {
+        if setStar {
+            self.favoriteButton.setBackgroundImage(UIImage(named: "star"), for: .normal)
+        }else{
+            self.favoriteButton.setBackgroundImage(UIImage(named: "blackStar"), for: .normal)
+        }
     }
 }
